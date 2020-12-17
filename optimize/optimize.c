@@ -33,7 +33,7 @@ int optimize(const double alpha, const int dim, double x[],
     }
     printf("\n");
 
-    if (norm < 0.01) break;
+    if (norm < 0.001) break;
 
     // 最急降下法による更新
     for (int i = 0; i < dim; i++) {

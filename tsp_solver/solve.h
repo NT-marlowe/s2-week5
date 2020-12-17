@@ -1,6 +1,7 @@
 #ifndef TSP_SOLVE_H
 #define TSP_SOLVE_H
 
+#include "city.h"
 typedef struct ans{
   double dist;
   int *route;
