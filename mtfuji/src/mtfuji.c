@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
   double a = 10;
   double b = 10;
   double alpha = 0.05; // とりあえず
-  double thresh = 0.3;
+  double thresh = 0.1;
   
   steepest_descend(data, n, &a, &b, thresh, alpha);
 
@@ -34,7 +34,12 @@ int main(int argc, char **argv) {
 
   qsort(data, n, sizeof(Sample), comp_alt); 
   for (int i = 0; i < n; i++) {
-    printf("%s,\t\t%lf,\t%lf\n", data[i].loc, data[i].alt, data[i].temp);
+    // printf("%s:\t\talt = %.4lf, temp = %.1lf\n", data[i].loc, data[i].alt, data[i].temp);
+    printf("%s:", data[i].loc);
+    for (int j = strlen(data[i].loc); j < 15; j++) {
+      printf(" ");
+    }
+    printf("alt = %.4lf, temp = %.1lf\n", data[i].alt, data[i].temp);
   }
   return 0;
 }
